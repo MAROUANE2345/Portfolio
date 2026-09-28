@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F1F2EE;
+  color: #101B2D;
+}
+
+/* subtle blueprint grid, used only in the hero */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(30, 58, 102, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 58, 102, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* registration-mark corners, used on spec-sheet cards */
+.corner-marks {
+  position: relative;
+}
+.corner-marks::before,
+.corner-marks::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: #3E6E9E;
+  opacity: 0.6;
+}
+.corner-marks::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+.corner-marks::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+.leader-line {
+  stroke: #3E6E9E;
+  stroke-width: 1;
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal 0.6s ease-out both;
+  }
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+:focus-visible {
+  outline: 2px solid #C97A2B;
+  outline-offset: 2px;
+}
